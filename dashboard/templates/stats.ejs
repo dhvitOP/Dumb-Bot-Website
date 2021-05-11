@@ -1,0 +1,15 @@
+<%- include("partials/header", { bot, user, path, clientdetail, title: "Statistics" }) %>
+
+<div class="container-sm center" style="margin-top: 25px;">
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <h2>Dumb Bot Statistics</h2>
+    <p>All Guilds Count: <%= clientdetail.guilds %></p>
+    <p>All Channels Count: <%= clientdetail.channels %></p>
+  <p>All Users Count: <%= clientdetail.users %></p>
+  
+    <a class="btn btn-warning" href="/support">Discord Server</a>
+    <a class="btn btn-warning text-blue" href="/invite">Invite Now</a>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,54 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Myst82015",
+      "name": "Myst",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34489470?v=4",
+      "profile": "https://github.com/Myst82015",
+      "contributions": [
+        "code",
+        "content",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "MrAugu",
+      "name": "MrAugu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39545629?v=4",
+      "profile": "https://discord.gg/Wwekc2QAzq",
+      "contributions": [
+        "code",
+        "content",
+        "ideas",
+        "maintenance",
+        "review",
+        "design",
+        "bug"
+      ]
+    },
+    {
+      "login": "Snowflake107",
+      "name": "MegaPixel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46562212?v=4",
+      "profile": "https://snowflake.is-a.dev",
+      "contributions": [
+        "code",
+        "design",
+        "content"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "simple-discordjs-dashboard",
+  "projectOwner": "MrAugu",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

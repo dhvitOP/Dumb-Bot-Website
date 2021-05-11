@@ -1,0 +1,38 @@
+<%- include("partials/header", { bot, user, path, db1, title: "Dumb Server List" }) %>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+   <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+  <% bot.guilds.cache.forEach(guild => {
+      
+  %> 
+  <% let joinlink3 = db1.fetch(`serverslist_${guild.id}`); %>
+   
+    <% if(joinlink3) { %>
+ 
+    <div class="card" style="max-width: 18rem; margin: 2rem; min-width: 10em;">
+    <% let joinlink = 'https://discord.gg/' + joinlink3; %>
+    <%- guild.icon ? `<img src="https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}" class="card-img-top" style="max-width: 18rem;">` : "" %>
+    
+      <div class="card-body">
+        <h5 class="card-title"><%= guild.name %></h5>
+          <p class="card-text">Join <%= guild.name %> Server by clicking This Button</p>
+           <a href=<%= joinlink %> class="btn btn-success text-white">Join Server</a>
+            <a class="btn btn-warning" href="/autojoin/<%- guild.id %>">Auto Join</a>
+             <a class="btn btn-warning" href="/report/<%- guild.id %>">Report</a>
+         
+        <% } 
+        else { 
+         return; 
+          } %>
+      </div>
+    </div>
+  <%
+      });
+  %>
+</div>
+
+<%- include("partials/footer") %>

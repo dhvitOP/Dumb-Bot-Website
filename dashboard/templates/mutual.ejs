@@ -1,0 +1,27 @@
+<%- include("partials/header", { bot, user, path, title: "Mutual Servers With Bot" }) %>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <% user.guilds.forEach(guild => {
+      const permsOnGuild = new perms(guild.permissions);
+      if(!permsOnGuild.has("MANAGE_GUILD")) return;
+  %>
+
+    <div class="card" style="max-width: 18rem; margin: 2rem; min-width: 10em;">
+    <%- guild.icon ? `<img src="https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}" class="card-img-top" style="max-width: 18rem;">` : "" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= guild.name %></h5>
+        <% if (bot.guilds.cache.get(guild.id)) { %>
+          <p class="card-text"> I am in this server with <%= user.username %> </p>
+       
+        <% } else { %>
+          <p class="card-text">I am not in this server 😢</p>
+          <a href="<%= `/invite`  %>" class="btn btn-primary text-white">Invite Bot!</a>
+        <% } %>
+      </div>
+    </div>
+  <%
+      });
+  %>
+</div>
+
+<%- include("partials/footer") %>

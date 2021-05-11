@@ -1,0 +1,31 @@
+<%- include("partials/header", { bot, user, path, channel, color, message, title: `Say | ${guild.name}` }) %>
+
+<div class="container-sm center" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+    <h1><%= guild.name %></h1>
+   
+    <p>Fill this * Fields to Send An Message</p>
+     <form method="POST">
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Message*</p>
+      <p style="font-style: italic;" class="disabled">Enter An Message To send</p>
+      <input type="text" class="form-control" name="message" value="<%= message %>" placeholder="Your Message.">
+    
+    
+    
+     
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Channel*</p>
+      <p style="font-style: italic;" class="disabled">Choose an channel</p>
+      <input type="text" class="form-control" name="channel" value="<%= channel %>" placeholder="Channel name or ID">
+      <br><button type="submit" class="btn btn-secondary text-white">Send Message</button>
+    </form>
+      
+    
+  </div>
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,19 @@
+<%- include("partials/header", { bot, user, path, channel, color, message, title: `Settings | ${guild.name}` }) %>
+
+<div class="container-sm center" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+    <h1><%= guild.name %></h1>
+    <p>Here is Your Settings of <%= guild.name %></p>
+   <a class="btn btn-warning" href="/dashboard/sendembed/<%- guild.id %>">Send Embed</a>
+    <a class="btn btn-warning" href="/dashboard/say/<%- guild.id %>">Say By Bot</a>
+      
+    
+  </div>
+</div>
+
+<%- include("partials/footer") %>

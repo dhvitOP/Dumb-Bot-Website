@@ -1,0 +1,21 @@
+<%- include("partials/header", { bot, user, path, title: `Report | ${guild3.name}` }) %>
+
+<div class="container-sm center" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+    <h1><%= guild3.name %></h1>
+    <hr>
+    <form method="POST">
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Report</p>
+      <p style="font-style: italic;" class="disabled">Enter An Reason to Report</p>
+      <input type="text" class="form-control" name="reports" value="<%= reports %>" placeholder="Your Report.">
+      <br><button type="submit" class="btn btn-secondary text-white">Save Report</button>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
